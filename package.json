@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/index.ts",
+    "build": "tsc",
     "prettier": "prettier --ignore-path .prettierignore \"**/*.+(js|ts|json)\"",
     "eslint": "eslint --ignore-path .eslintignore --ext .js,.ts ."
   },
