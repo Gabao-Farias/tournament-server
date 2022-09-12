@@ -15,6 +15,15 @@ const io = new Server(server, {
   },
 });
 
-server.listen(3001, () => {
+io.on('connection', (socket) => {
+  console.log(`User connected: ${socket.id}`);
+
+  socket.on('SEND_MESSAGE', (data) => {
+    socket.broadcast.emit('RECEIVE_MESSAGE', data);
+    console.log(data);
+  });
+});
+
+server.listen(4000, () => {
   console.log('Server listening');
 });
